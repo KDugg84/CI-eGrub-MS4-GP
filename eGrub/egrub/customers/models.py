@@ -24,5 +24,13 @@ class OrderModel(models.Model):
     price = models.DecimalField(max_digits=7, decimal_places=2)
     items = models.ManyToManyField('MenuItems', related_name='order', blank=True)
 
+    # Order details for the user making the order
+    name = models.CharField(max_length=50, blank=True)
+    email_address = models.CharField(max_length=50, blank=True)
+    street_name = models.CharField(max_length=50, blank=True)
+    city = models.CharField(max_length=50, blank=True)
+    county = models.CharField(max_length=20, blank=True)
+    post_code = models.CharField(max_length=20, blank=True)
+
     def __str__(self):
         return f'Order: {self.created_on.strftime("%b %d %I: %M %p")}'
