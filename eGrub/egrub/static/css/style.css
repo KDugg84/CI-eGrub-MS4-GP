@@ -1,11 +1,18 @@
+/* Default styles for all pages */
+
 html {
     height: 100%;
 }
 
+
 body {
     background: url('/media/menu_images/homepage_background.jpeg') no-repeat center center fixed;
     background-size: cover;
+    color: #777777;
+    font-family: 'Lato';
 }
+
+/* Text colours for index.html */
 
 #welcome {
     color: white;
