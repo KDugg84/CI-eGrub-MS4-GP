@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import View
+from django.core.mail import send_mail
 from .models import MenuItems, Category, OrderModel 
 
 class IndexPage(View):
@@ -32,6 +33,14 @@ class Order(View):
 
     # Define the 'POST' method for orders
     def post(self, request, *args, **kwargs):
+        # Grab all the order detail variables from the models.py
+        name = request.POST.get('name')
+        email_address = request.POST.get('email_address')
+        street_name = request.POST.get('street_name')
+        city = request.POST.get('city')
+        county = request.POST.get('county')
+        post_code = request.POST.get('post_code')
+
         # Grab all selected items, get menu item, return name, price and id to calculate total order price
         order_items = {
             'items': []
@@ -61,8 +70,30 @@ class Order(View):
             item_ids.append(item['id'])
 
         # Create order oject and append all menu items
-        order = OrderModel.objects.create(price=price)
+        order = OrderModel.objects.create(
+            price=price,
+            name=name,
+            email_address=email_address,
+            street_name=street_name,
+            city=city,
+            county=county,
+            post_code=post_code
+        )
         order.items.add(*item_ids)
+
+        # Define email body
+        body = ('Thank you for your order! Your order is being prepaired and will be delivered shortly!\n'
+            f'Your total: {price}\n'
+            'Thank you again for your order!')
+
+        # Send order confirmation email to the user
+        send_mail(
+            'Thank You For Placing Your Order!',
+            body,
+            'example@gmail.com',
+            [email_address],
+            fail_silently=False 
+        )  
 
         # Pass into context
         context = {
