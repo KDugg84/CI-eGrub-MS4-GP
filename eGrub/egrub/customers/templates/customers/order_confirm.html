@@ -11,7 +11,7 @@
     </div>
 
     <div class="row justify-content-center mt-5">
-        <div class="col-sm-12 col-md-5 text-center card rounded shadow">
+        <div class="col-sm-12 col-md-5 text-center card rounded shadow mb-5">
             <h3 class="pb-3">Order Summary:</h3>
             {% for item in items.all %}
                 <p>{{ item.name }} <span class="pl-3">£ {{ item.price }}</span></p>
@@ -19,5 +19,88 @@
             <p class="font-weight-bold pt-4">Total: £ {{ price }}</p>
         </div>
     </div>
+
+    <div class="row justify-content-center pb-2 text-white">
+        <div class="col-md-6 text-center">
+            <h3>Pay Now or Pay with Cash on Delivery?</h3>
+        </div>
+    </div>
+
+    <!-- Paypay API integration -->
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <div id="paypal-button"></div>
+        </div>
+    </div>
 </div>
+
+<!-- Paypal API integration script -->
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script>
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    const csrftoken = getCookie('csrftoken');
+
+    paypal.Button.render({
+        // Configure environment
+        env: 'sandbox',
+        client: {
+            sandbox: 'AdBAao9n6D-0oIGspQFwowCoH70RoXU38YlPghnW5txKrXXiVc9ND5mf9rExouMaLbi-TU4wYbtj6VNT',
+            production: 'demo_production_client_id'
+        },
+        // Customize button (optional)
+        locale: 'en_US',
+        style: {
+            size: 'large',
+            color: 'blue',
+            shape: 'rect',
+        },
+
+        // Enable Pay Now checkout flow (optional)
+        commit: true,
+
+        // Set up a payment
+        payment: function (data, actions) {
+            return actions.payment.create({
+                transactions: [{
+                    amount: {
+                        // Price passed in the views.py class ConfirmOrder
+                        total: '{{ price }}',
+                        currency: 'USD'
+                    }
+                }]
+            });
+        },
+        // Execute the payment
+        onAuthorize: function (data, actions) {
+            return actions.payment.execute().then(function () {
+                // Show a confirmation message to the buyer
+                $.ajax({
+                    type: 'POST',
+                    url: "{% url 'order-confirm' pk %}",
+                    beforeSend: function(request) {
+                        request.setRequestHeader('X-CSRFToken', csrftoken)
+                    },
+                    data: JSON.stringify({'hasPaid': true}),
+                    success: function(data) {
+                        window.location.href = '/confirm-order-payment/'
+                    }
+                })
+            });
+        }
+    }, '#paypal-button');
+</script>
 {% endblock content %}
