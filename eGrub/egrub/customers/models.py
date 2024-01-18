@@ -32,5 +32,8 @@ class OrderModel(models.Model):
     county = models.CharField(max_length=20, blank=True)
     post_code = models.CharField(max_length=20, blank=True)
 
+    # Payment variable linked to payment method
+    has_paid = models.BooleanField(default=False)
+
     def __str__(self):
         return f'Order: {self.created_on.strftime("%b %d %I: %M %p")}'
