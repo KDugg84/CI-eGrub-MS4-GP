@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from customers.views import IndexPage, AboutPage, Order
+from customers.views import IndexPage, AboutPage, Order, ConfirmOrder, ConfirmOrderPayment
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexPage.as_view(), name='index'),
     path('about/', AboutPage.as_view(), name='about'),
     path('order/', Order.as_view(), name='order'),
+    path('order-confirm/<int:pk>', ConfirmOrder.as_view(), name='order-confirm'),
+    path('confirm-order-payment/', ConfirmOrderPayment.as_view(), name='confirm-order-payment'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
