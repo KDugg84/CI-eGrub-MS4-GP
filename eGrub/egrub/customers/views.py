@@ -1,4 +1,5 @@
-from django.shortcuts import render
+import json
+from django.shortcuts import render, redirect
 from django.views import View
 from django.core.mail import send_mail
 from .models import MenuItems, Category, OrderModel 
@@ -101,4 +102,37 @@ class Order(View):
             'price': price
         }
 
-        return render(request, 'customers/order_confirm.html', context)     
+        return redirect('order-confirm', pk=order.pk) 
+
+        
+# Render new template for order confirmation   
+class ConfirmOrder(View):
+    # Handle get request after user submits the order
+    def get(self, request, pk, *args, **kwargs):
+        # Pass in order object
+        order = OrderModel.objects.get(pk=pk)
+
+        # Pass into context 
+        context = {
+            'pk': order.pk,
+            'items': order.items,
+            'price': order.price 
+        }
+
+        return render(request, 'customers/order_confirm.html', context)
+
+    def post(self, request, pk, *args, **kwargs):
+        # Data in the request body
+        data = json.loads(request.body)
+
+        if data['hasPaid']:
+            order = OrderModel.objects.get(pk=pk)
+            order.has_paid = True
+            order.save()
+
+        return redirect('confirm-order-payment')
+
+# Render new template to confirm order payment
+class ConfirmOrderPayment(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'customers/confirm_order_payment.html')
