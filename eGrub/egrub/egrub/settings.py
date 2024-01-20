@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'crispy_forms',
 ]
 
 SITE_ID = 1
@@ -83,7 +84,7 @@ ROOT_URLCONF = 'egrub.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'allauth/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -161,3 +162,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Disable alluath 'Signup' as we only want the 'Signin' feature for staff logins
 ACCOUNT_ADAPTER = 'restaurant.account_adapter.NoNewUsers'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
