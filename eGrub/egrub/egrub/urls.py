@@ -18,6 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from customers.views import IndexPage, AboutPage, Order, ConfirmOrder, ConfirmOrderPayment
+from restaurant.views import StaffDashboard
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +28,5 @@ urlpatterns = [
     path('order/', Order.as_view(), name='order'),
     path('order-confirm/<int:pk>', ConfirmOrder.as_view(), name='order-confirm'),
     path('confirm-order-payment/', ConfirmOrderPayment.as_view(), name='confirm-order-payment'),
+    path('dashboard/', StaffDashboard.as_view(), name='dashboard')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
