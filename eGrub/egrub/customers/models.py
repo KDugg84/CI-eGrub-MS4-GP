@@ -34,6 +34,8 @@ class OrderModel(models.Model):
 
     # Payment variable linked to payment method
     has_paid = models.BooleanField(default=False)
+    # Variable to determine if order has been shipped
+    has_shipped = models.BooleanField(default=False)
 
     def __str__(self):
         return f'Order: {self.created_on.strftime("%b %d %I: %M %p")}'
