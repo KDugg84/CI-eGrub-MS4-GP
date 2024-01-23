@@ -14,14 +14,14 @@ class StaffDashboard(View, LoginRequiredMixin, UserPassesTestMixin):
             created_on__day=today.day)
 
         # Loop through the order(s) and add the total price
-        total_price = 0
+        total_revenue = 0
         for order in orders:
-            total_price += order.price
+            total_revenue += order.price
 
         # Pass the number of order(s) and total revenue into template
         context = {
             'orders': orders,
-            'total_price': total_price,
+            'total_revenue': total_revenue,
             'total_orders': len(orders)
         }
 
