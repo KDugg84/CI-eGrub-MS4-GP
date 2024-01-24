@@ -1,0 +1,53 @@
+{% extends 'restaurant/base.html' %}
+
+{% block content %}
+<!--Container for order details/information-->
+<div class="container card mt-3">
+    <div class="row justify-content-center">
+        <div class=" mt-3 col-sm-12 col-md-6 text-center">
+            <!--Gets the order's primary key from the database-->
+            <h2>Order ID: {{ order.pk }}</h2>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="mt-5 col-sm-12 col-md-12">
+            <h4>Customer's Order Details:</h4>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="mt-5 col-sm-12 col-md-6">
+            <!--Displays the order information from the database-->
+            <p><span class="font-weight-normal">Name:</span> {{ order.name }} </p>
+            <p><span class="font-weight-normal">Email:</span> {{ order.email_address }} </p>
+            <h4 class="pt-3">Customer's Address Information:</h4>
+            <p><span class="font-weight-normal">Street:</span> {{ order.street_name }} </p>
+            <p><span class="font-weight-normal">City:</span> {{ order.city }} </p>
+            <p><span class="font-weight-normal">County:</span> {{ order.county }} </p>
+            <p><span class="font-weight-normal">Post Code:</span> {{ order.post_code }} </p>
+        </div>
+
+        <div class="col-sm-12 col-md-6">
+            <h4>Payment and Delivery Details</h4>
+            <!--Loop through the payment/delivery variables in the OrderModel-->
+            <div class="mt-3">{% if order.has_paid %}
+                <p><i class="text-success fas fa-check"></i><span class="pl-2">Order Has Been Paid</span></p>
+                {% else %}
+                <p><i class="text-danger fas fa-times"></i><span class="pl-2">Order Has Not Been Paid</span></p>
+                {% endif %}
+
+                {% if order.has_shipped %}
+                <p><i class="text-success fas fa-check"></i><span class="pl-2">Order Has Been Dispatched</span></p>
+                {% else %}
+
+                <form method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-primary">Confirm Delivery</button>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
