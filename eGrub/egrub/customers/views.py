@@ -1,6 +1,7 @@
 import json
 from django.shortcuts import render, redirect
 from django.views import View
+from django.db.models import Q
 from django.core.mail import send_mail
 from .models import MenuItems, Category, OrderModel 
 
@@ -136,3 +137,36 @@ class ConfirmOrder(View):
 class ConfirmOrderPayment(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'customers/confirm_order_payment.html')
+
+
+# Render template to display all items on the menu in the 'menu' navbar
+class MenuList(View):
+    def get(self, request, *args, **kwargs):
+        menu_items = MenuItems.objects.all()
+
+        # Pass into context 
+        context = {
+            'menu_items': menu_items
+        }
+
+        return render(request, 'customers/menu_list.html', context)
+
+
+class SearchMenuList(View):
+    def get(self, request, *args, **kwargs):
+        # Variable query 
+        query = self.request.GET.get("query")
+
+        # Use Q to query by name, price and description
+        menu_items = MenuItems.objects.filter(
+            Q(name__icontains=query) |
+            Q(price__icontains=query) |
+            Q(description__icontains=query)
+        )
+
+        # Pass into context
+        context = {
+            'menu_items': menu_items
+        }
+
+        return render(request, 'customers/menu_list.html', context)
