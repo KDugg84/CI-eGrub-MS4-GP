@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from customers.views import IndexPage, AboutPage, Order, ConfirmOrder, ConfirmOrderPayment
+from customers.views import IndexPage, AboutPage, Order, ConfirmOrder, ConfirmOrderPayment, MenuList, SearchMenuList
 from restaurant.views import StaffDashboard, OrderInformation
 
 urlpatterns = [
@@ -25,6 +25,8 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', IndexPage.as_view(), name='index'),
     path('about/', AboutPage.as_view(), name='about'),
+    path('menu-list/', MenuList.as_view(), name='menu-list'),
+    path('search-menu-list/', SearchMenuList.as_view(), name='search-menu-list'),
     path('order/', Order.as_view(), name='order'),
     path('order-confirm/<int:pk>', ConfirmOrder.as_view(), name='order-confirm'),
     path('confirm-order-payment/', ConfirmOrderPayment.as_view(), name='confirm-order-payment'),
