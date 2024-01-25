@@ -66,3 +66,28 @@ My main objectives are:
 
 * I used ElephantSQL to store the SQLite3 database for this project.
 
+## User Experience (UX) 
+
+The best (intuitive) UX creates single-use learning.
+
+### Target Audience
+
+* Users who frequently order food online and use similar applications such as Uber Eats, Deliveroo etc.
+
+### User Stories
+
+* First Time Visitor Goals:
+
+    * To understand how the site works and what its about.
+
+    * How to navigate the site.
+
+    * Search the menu for what's available to order.
+
+* Returning Visitor Goals:
+
+    * Be able to place an order by selecting items from the menu.
+
+    * Be able to add delivery details such as name, email, address etc.
+
+    * Be able to pay for that order using a payment gate. 
