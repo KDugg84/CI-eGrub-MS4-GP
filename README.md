@@ -10,9 +10,12 @@ For my fourth and last project (MS4) I decided to create a fast food delivery si
 
 ## CONTENTS
 
-* [User Experience](#user-experience-ux)
-  * [User Stories](#user-stories)
+* [Site Objectives](#site-objectives)
 
+* [User Experience](#user-experience-ux)
+  * [Target Audience](#target-audience)
+  * [User Stories](#user-stories)
+  
 * [Design](#design)
   * [Colour Scheme](#colour-scheme)
   * [Typography](#typography)
@@ -46,3 +49,20 @@ For my fourth and last project (MS4) I decided to create a fast food delivery si
 * [Credits](#credits)
   * [Code Used](#code-used)
   * [Acknowledgments](#acknowledgments)
+
+## Site Objectives
+
+Design and create a food delivery website to demonstrate an increasing understanding of the libraries and frameworks available to developers.
+
+My main objectives are:
+
+* I wanted to make the site easily accessible and intuitively navigated for the users.
+
+* Allow users to search the menu and then decide what they would like to order.
+
+* Allow users to pay for their orders with the use of a payment gate.
+
+* The use of the backend framework which allows staff to login to the restuarant to check and sign-off on orders.
+
+* I used ElephantSQL to store the SQLite3 database for this project.
+
