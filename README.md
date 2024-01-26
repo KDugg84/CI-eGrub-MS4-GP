@@ -99,3 +99,31 @@ The best (intuitive) UX creates single-use learning.
     * Allow staff to tally both orders and revenue for that particular day.
 
     * Allow staff to logout of the restaurant side of the site.
+
+## Design
+
+### Colour Scheme
+
+The colour scheme used throughout the project was intended to be consistant with most if not all pages and consisted of bootstrap colour classes and other CSS colour classes:
+
+Bootstrap:
+
+* bg-success: #28a745, a shade of green used for the navigation bar and the footer.
+
+* text-white: #fff, a shade of white used on the navigation and footer links as well as page headers.
+
+* bg-danger: #dc3545, a shade of red (ruby) used with the font awesome cross icons.
+
+* btn-outline-primary: a shade of cyan-blue used to style all buttons used in placing orders and marking the orders as dispatched.
+
+CSS: 
+
+* Gray: #777777, a shade of gray used as the default in the body element in conjunction with the bootstrap card class used to create a more subtle font style.
+
+### Typography
+
+The main font style used throughout the project was the Lato font, which is a type of sans-serif, this was imported into the project from Google Fonts by imbedding their links into the head element of the base project page which included all of the various font weights avaliable. This font style has become popular due to its unique balance of originality and transparency when used in body text. 
+
+### Imagery
+
+The landing page includes the use of a hero image which is extended across all pages of the website. The hero image is a fast food collage displaying the various food items which are for order via the menu and the place order page. The hero image was taken from an [Uder Eats page](https://www.ubereats.com/gb/store/low-cost-fast-food/kETrDPZwSrG0LUrZ3EK9rw), the photos used to display the food items also came from the same page.
