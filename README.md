@@ -91,3 +91,11 @@ The best (intuitive) UX creates single-use learning.
     * Be able to add delivery details such as name, email, address etc.
 
     * Be able to pay for that order using a payment gate. 
+
+    * Allow staff to login to the restaurant side to view current orders.
+
+    * Allow staff to update and sign-off on orders as completed for dispatch.
+
+    * Allow staff to tally both orders and revenue for that particular day.
+
+    * Allow staff to logout of the restaurant side of the site.
