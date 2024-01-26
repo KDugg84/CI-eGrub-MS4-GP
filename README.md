@@ -23,6 +23,7 @@ For my fourth and last project (MS4) I decided to create a fast food delivery si
   * [Wireframes](#wireframes)
 
 * [Features](#features)
+  * [Database Schema](#database-schema)
   * [General Features on Each Page](#general-features-on-each-page)
   * [Future Implementations](#future-implementations)
   * [Accessibility](#accessibility)
@@ -127,3 +128,17 @@ The main font style used throughout the project was the Lato font, which is a ty
 ### Imagery
 
 The landing page includes the use of a hero image which is extended across all pages of the website. The hero image is a fast food collage displaying the various food items which are for order via the menu and the place order page. The hero image was taken from an [Uder Eats page](https://www.ubereats.com/gb/store/low-cost-fast-food/kETrDPZwSrG0LUrZ3EK9rw), the photos used to display the food items also came from the same page.
+
+### Wireframes
+
+The wireframes were created using Balsamiq desktop for Windows 10:
+
+## Features
+
+### Database Schema 
+
+* The 'MenuItems' model within the customer app is used to store information relating to the menu items.
+
+* The 'Category' model within the customer app is used to group all the various menu items based on the many-to-many relationship.
+
+* The 'OrderModel' model within the customer app is used to store information relating to a customer's address details, payment information and the price, when the order was created and the MenuItems many-to-many relationship.
