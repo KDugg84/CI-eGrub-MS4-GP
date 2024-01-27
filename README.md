@@ -25,7 +25,6 @@ For my fourth and last project (MS4) I decided to create a fast food delivery si
 * [Features](#features)
   * [Database Schema](#database-schema)
   * [General Features Across The Site](#general-features-on-each-page)
-  * [Future Implementations](#future-implementations)
   * [Accessibility](#accessibility)
 
 * [Technologies Used](#technologies-used)
@@ -180,3 +179,13 @@ The wireframes were created using Balsamiq desktop for Windows 10:
 * Search bar:
 
   * Used to search the menu page by keywords.
+
+### Accessibility
+
+Whilst coding the site I have ensured that the site is accesible for all. This is achieve by using:
+
+* Google Dev Tools to check contrast of items.
+
+* Semantic HTML.
+
+* Aria Labels to hightlight areas for users who require the use of a screen reader.
