@@ -31,20 +31,20 @@ For my fourth and last project (MS4) I decided to create a fast food delivery si
   * [Languages Used](#languages-used)
   * [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
 
-* [Deployment & Local Development](#deployment--local-development)
-  * [Deployment](#deployment)
-  * [Local Development](#local-development)
-    * [How to Fork](#how-to-fork)
-    * [How to Clone](#how-to-clone)
-
 * [Testing](#testing)
+  * [Testing User Stories](#testing-user-stories)
   * [Manual Testing](#manual-testing)
-  * [User](#user)
   * [Bugs](#bugs)
   * [Lighthouse](#lighthouse)
   * [Validation Testing](#validation-testing)
     * [HTML \& CSS](#html--css)
     * [Python Testing](#python-testing)
+
+* [Deployment & Local Development](#deployment--local-development)
+  * [GitHub Deployment](#deployment)
+  * [Local Development](#local-development)
+    * [How to Fork](#how-to-fork)
+    * [How to Clone](#how-to-clone)    
 
 * [Credits](#credits)
   * [Code Used](#code-used)
@@ -92,13 +92,11 @@ The best (intuitive) UX creates single-use learning.
 
     * Be able to pay for that order using a payment gate. 
 
-    * Allow staff to login to the restaurant side to view current orders.
+    * Allow staff to login to the restaurant side of the website.
 
-    * Allow staff to update and sign-off on orders as completed for dispatch.
+    * Allow staff to view orders and sign-off on orders as completed for dispatch.
 
     * Allow staff to tally both orders and revenue for that particular day.
-
-    * Allow staff to logout of the restaurant side of the site.
 
 ## Design
 
@@ -114,7 +112,9 @@ Bootstrap:
 
 * text-danger: #dc3545, a shade of red (ruby) used with the font awesome cross icons.
 
-* btn-outline-primary: a shade of cyan-blue used to style all buttons used in placing orders and marking the orders as dispatched.
+* btn-outline-primary: #007bff, a shade of cyan-blue used to style all buttons used in placing orders and marking the orders as dispatched.
+
+* btn-info: #17a2b8, a shade of cyan used to style the staff login button.
 
 CSS: 
 
@@ -226,3 +226,47 @@ Whilst coding the site I have ensured that the site is accesible for all. This i
 * [Font Awesome 6.5.1](https://fontawesome.com/) was used to add icons for aesthetic and UX purposes.
 * [W3C Validator](https://validator.w3.org/) & [W3C CCS Validator](https://jigsaw.w3.org/css-validator/) used to validate my HTML and CSS files.
 * [JShint](https://jshint.com/) used to validate JS code.
+
+## Testing
+
+### Testing User Stories
+
+* First Time Visitor Goals:
+
+  * To understand how the site works and what its about.
+
+    * Upon entering the home page the user will see the site name/logo in the top left hand corner of the navigation bar, the name indicates to the user what the website/application is and does. The navigation bar links clearly identify what page is which without ambiguity.
+
+  * How to navigate the site.
+
+    * The navigation bar links are clearly visible in the top right hand corner, each link tells the user what page is which.
+
+  * Search the menu for what's available to order.
+
+    * Clicking on the menu link in the navigation bar will direct the user to the menu page where they can either scroll down the page and see all the food items that are for purchase or they can search the menu using the search bar using various keywords.
+
+* Returning Visitor Goals:
+
+  * Be able to place an order by selecting items from the menu.
+
+    * The user has two options by which to place an order, either by clicking on the "order now" button located in the centre of the landing page or in the navigation bar by clicking on the "place order" link, both options will redirect the user to the order page where they can select from a range of fast food items.
+
+  * Be able to add delivery details such as name, email, address etc.
+
+    * Once a user has selected what they would like to order from the menu list on the order page below that there is a form to allow the user to add their name, email address, full address which includes steet name and number, town or city, county and post code. This information is then posted to the database and the user is then redirected to an order confirmation page where they can review their order. 
+
+  * Be able to pay for that order using a payment gate.
+
+    * After the user has placed their order they are redirected to an order confirmation page where they can review their order which includes all items and the total price. At the bottom of the order confirmation page located above the footer there is a Paypal button which allows the user to pay for their order. The payment system used is not real for development purposes but uses Paypal's sandbox which is a self-contained, virtual testing environment that simulates the live Paypal production environment.
+
+  * Allow staff to login to the restaurant side of the website.
+
+    * Located in the footer there is an anchor url styled using bootstrap button clases which when clicked takes you to the restaurant side of the site which would allow a staff member to view current orders for the current day.
+
+  * Allow staff to view orders and sign-off on orders as completed for dispatch.
+
+    * Once a staff member has logged into the restuarant app there are two bootstrap cards at the top of the page, one displaying the total number of orders for that particular day. At the end of each table which displays the various order details there is a button to display the order information in another bootstrap card with a button to signoff an order as dispatched.
+
+  * Allow staff to tally both orders and revenue for that particular day.
+
+    * The restuarant app has two bootstrap cards displaying both total orders and the total revenue for a particular day.
