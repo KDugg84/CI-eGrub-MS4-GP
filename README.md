@@ -189,3 +189,16 @@ Whilst coding the site I have ensured that the site is accesible for all. This i
 * Semantic HTML.
 
 * Aria Labels to hightlight areas for users who require the use of a screen reader.
+
+## Technologies Used
+
+### Languages Used
+
+* HTML5
+
+* CSS3
+
+* JavaScript ES6
+
+* Python
+
