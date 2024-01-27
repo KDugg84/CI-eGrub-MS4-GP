@@ -202,3 +202,27 @@ Whilst coding the site I have ensured that the site is accesible for all. This i
 
 * Python
 
+### Frameworks, Libraries & Programs Used
+
+* [Django](https://www.djangoproject.com/) the main Python framework used throughout the project.
+* [Gitpod](https://www.gitpod.io/) the vast majority of my time was spent inside GitPod's VSCode Cloud IDE.
+* Google Dev Tools was used to identify and resolve problems related to responsiveness and appearance.
+* [Github](https://github.com/) was used to store my project in a repository.
+* [Git](https://git-scm.com/) was used for version control.
+* [Google](https://google.com) for research and problem solving.
+* [Stack Overflow](https://stackoverflow.com/) for research and problem solving.
+* [Bootstrap 4.6](https://getbootstrap.com/docs/4.6/getting-started/introduction/) used to assist with the responsiveness and styling of the website using design templates.
+* [Django Allauth](https://docs.allauth.org/en/latest/introduction/index.html) used for form validation and user authentication.
+* [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) used to control the rendering behaviour of Django forms in a very elegant and DRY way.
+* [Pillow](https://pypi.org/project/pillow/2.2.1/) used to add support for opening, manipulating, and saving images.
+* [AWS](https://aws.amazon.com/) cloud-based storage service used to store static and, media files.
+* [Paypal](https://developer.paypal.com/docs/archive/checkout/integrate/) was used to deal with payments. 
+* [PEP8 Validator](https://pep8ci.herokuapp.com/) was used to check python code for errors
+* [ElephandSQL](https://www.elephantsql.com/) was used to store PostgreSQL database.
+* [Heroku](https://id.heroku.com/) was used to deploy the project.
+* [Balsamiq](https://balsamiq.com/wireframes/) was used to create the wireframes for the website.
+* [Am I Responsive](https://ui.dev/amiresponsive) To create the responsive banner of devices.
+* [Google Fonts](https://fonts.google.com/) was used to import the Lato font into the base template head tags which is used on all pages throughout the project.
+* [Font Awesome 6.5.1](https://fontawesome.com/) was used to add icons for aesthetic and UX purposes.
+* [W3C Validator](https://validator.w3.org/) & [W3C CCS Validator](https://jigsaw.w3.org/css-validator/) used to validate my HTML and CSS files.
+* [JShint](https://jshint.com/) used to validate JS code.
