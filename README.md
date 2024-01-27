@@ -2,7 +2,7 @@
 
 # eGrub
 
-For my fourth and last project (MS4) I decided to create a fast food delivery site/application that allows users to make fast food orders by selecting from a set menu of items and inputting their address details for delivery. The site includes the use of an e-commerce payment gate to allow users to pay for their orders before they are dispatched. There is also a staff login area where staff can view the total number of orders for the day and the total revenue generated for that particular day and the ability to sign-off an order as completed for dispatch.
+For my fourth and last project (MS4) I decided to create a fast food delivery site/application that allows users to make fast food orders by selecting from a set menu of items and inputting their address details for delivery. The site includes the use of an ecommerce payment gate to allow users to pay for their orders before they are dispatched. There is also a staff login area where staff can view the total number of orders for the day and the total revenue generated for that particular day and the ability to sign-off an order as completed for dispatch.
 
 ![AmIResponsive]
 
@@ -24,7 +24,7 @@ For my fourth and last project (MS4) I decided to create a fast food delivery si
 
 * [Features](#features)
   * [Database Schema](#database-schema)
-  * [General Features on Each Page](#general-features-on-each-page)
+  * [General Features Across The Site](#general-features-on-each-page)
   * [Future Implementations](#future-implementations)
   * [Accessibility](#accessibility)
 
@@ -109,11 +109,11 @@ The colour scheme used throughout the project was intended to be consistant with
 
 Bootstrap:
 
-* bg-success: #28a745, a shade of green used for the navigation bar and the footer.
+* bg-success, text-success: #28a745, a shade of green used for the navigation bar and the footer.
 
 * text-white: #fff, a shade of white used on the navigation and footer links as well as page headers.
 
-* bg-danger: #dc3545, a shade of red (ruby) used with the font awesome cross icons.
+* text-danger: #dc3545, a shade of red (ruby) used with the font awesome cross icons.
 
 * btn-outline-primary: a shade of cyan-blue used to style all buttons used in placing orders and marking the orders as dispatched.
 
@@ -142,3 +142,41 @@ The wireframes were created using Balsamiq desktop for Windows 10:
 * The 'Category' model within the customer app is used to group all the various menu items based on the many-to-many relationship.
 
 * The 'OrderModel' model within the customer app is used to store information relating to a customer's address details, payment information and the price, when the order was created and the MenuItems many-to-many relationship.
+
+### General Features Across The Site
+
+* The general features of most the website's pages include:
+
+  * A navigation bar which is responsive across all device screens.
+
+  * A logo which directs the user back to the home page when clicked.
+
+  * A footer with a link to the restaurant login for staff members.
+
+* Responsive on all device screen sizes:
+
+  * Mobile-first layout, responsive on all devices using the Bootstrap grid system.
+
+* User-friendly interface with easy navigation across the site:
+
+  * Minimalistic design with visuals and information presented clearly and concisely.
+
+  * Easily readable fonts and simple navigation throughout the site.
+
+  * Fixed navigation bar visible on every page including links to all other pages with a brand logo linking the user back to the home page.
+
+* Buttons:
+
+  * Clear interactive buttons using Bootstrap responsive button classes used for starting an order, placing an order and marking an order as been dispatched.
+
+* Forms:
+
+  * Forms used to submit order delivery details and confirm delivery.
+
+* Modal:
+
+  * Used to confirm that the user wishes to place the order.
+
+* Search bar:
+
+  * Used to search the menu page by keywords.
