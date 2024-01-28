@@ -34,6 +34,7 @@ For my fourth and last project (MS4) I decided to create a fast food delivery si
 * [Testing](#testing)
   * [Testing User Stories](#testing-user-stories)
   * [Manual Testing](#manual-testing)
+    * [Further Testing](further-testing)
   * [Bugs](#bugs)
   * [Lighthouse](#lighthouse)
   * [Validation Testing](#validation-testing)
@@ -270,3 +271,19 @@ Whilst coding the site I have ensured that the site is accesible for all. This i
   * Allow staff to tally both orders and revenue for that particular day.
 
     * The restuarant app has two bootstrap cards displaying both total orders and the total revenue for a particular day.
+
+### Manual Testing
+
+* All throughout the development process as previously mentioned each page was consistently checked to make sure that they responded correctly to the various default breakpoints built into Chrome Developer Tools.
+
+* The logo was clicked in each page to make sure that it was correctly linked to the home page.
+
+* Each navigation bar link on each page was clicked to verify that it not only worked but took you to the correct page.
+
+### Further Testing
+
+* All pages that make up the website/application were tested using Chrome Developer Tools to check for responsivness at the various different breakpoints to see how the site would react to being viewed on different devices.
+
+* The website was viewed on various different devices such as Desktop, Laptop, Google Nexus 7 tablet and my Blackview BV6000 Android phone.
+
+* Friends and family members were asked to review the site to highlight any bugs or user experience issues.
