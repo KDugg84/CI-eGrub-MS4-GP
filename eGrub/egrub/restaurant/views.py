@@ -4,6 +4,7 @@ from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.utils.timezone import datetime
 from customers.models import OrderModel
 
+
 # Define class to render the staff dashboard to view customer orders
 class StaffDashboard(View, LoginRequiredMixin, UserPassesTestMixin):
     def get(self, request, *args, **kwargs):
