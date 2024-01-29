@@ -35,11 +35,11 @@ For my fourth and last project (MS4) I decided to create a fast food delivery si
   * [Testing User Stories](#testing-user-stories)
   * [Manual Testing](#manual-testing)
     * [Further Testing](further-testing)
-  * [Bugs](#bugs)
-  * [Lighthouse](#lighthouse)
+  * [Bugs \& Errors](#bugs--errors)
   * [Validation Testing](#validation-testing)
     * [HTML \& CSS](#html--css)
     * [Python Testing](#python-testing)
+    * [Lighthouse](#lighthouse)
 
 * [Deployment & Local Development](#deployment--local-development)
   * [GitHub Deployment](#deployment)
@@ -225,7 +225,7 @@ Whilst coding the site I have ensured that the site is accesible for all. This i
 * [Am I Responsive](https://ui.dev/amiresponsive) To create the responsive banner of devices.
 * [Google Fonts](https://fonts.google.com/) was used to import the Lato font into the base template head tags which is used on all pages throughout the project.
 * [Font Awesome 6.5.1](https://fontawesome.com/) was used to add icons for aesthetic and UX purposes.
-* [W3C Validator](https://validator.w3.org/) & [W3C CCS Validator](https://jigsaw.w3.org/css-validator/) used to validate my HTML and CSS files.
+* [W3C Validator](https://validator.w3.org/) used to validate my HTML files.
 * [JShint](https://jshint.com/) used to validate JS code.
 
 ## Testing
@@ -287,3 +287,65 @@ Whilst coding the site I have ensured that the site is accesible for all. This i
 * The website was viewed on various different devices such as Desktop, Laptop, Google Nexus 7 tablet and my Blackview BV6000 Android phone.
 
 * Friends and family members were asked to review the site to highlight any bugs or user experience issues.
+
+### Bugs and Errors
+
+### Validation Testing
+
+The W3C Markup Validation Service was used on all HTML pages, the use of the CSS Jigsaw Validator was omitted from this process due to the lack of external CSS, this would be attributed to the use of bootstrap in the project. The code was entered through direct input.
+
+* HTML Validator:
+
+  * Customers App:
+
+    * The validator flagged the Jinja templating logic as the majority of errors raised, the image elements were flagged for having no alt attributes in the 'order' and 'menu_list' files but this was corrected afterwards.
+
+* Restaurant App:
+
+  * The only error messages raised with the HTML files in the restaurant app were with the Jinja templating logic, these were subsequently ignored as they are not considered major or fatal errors.
+
+JShint was used to check any errors in the Javascript used as part of the PayPal API implementation script in the 'order_confirm' file.
+
+* Undefined Variables:
+
+  * paypal on line 57.
+
+  * $ on line 91.
+
+  * Three missing semicolons missing on lines 95, 99 and 101. These missing semicolons have now been added to the JS script in the 'order_confirm' HTML file. 
+
+### Python Testing
+
+Python PEP8 validation was done via Code Institue's Python Linter.
+
+The files that were tested:
+
+* Customers App: 
+
+  * models.py
+
+  * views.py
+
+* Restaurant App:
+
+  * account_adapter.py
+
+  * views.py
+
+* Root directory:
+
+  * urls.py
+
+The only errors received were some lines of text exceeded the character limit of 79 and some areas of trailing white space where comments are located.
+
+### Lighthouse
+
+Lighthouse was used to run a series of audits to improve the quality of web pages. Overall performance and errors are highlighted below.
+
+Results:
+
+* [Mobile](eGrub/egrub/static/img/Lighthouse-Mobile.PNG)
+
+* [Desktop](eGrub/egrub/static/img/Lighthouse-Desktop.PNG)
+
+The performance score can fluctuate because of changes in underlying conditions.
