@@ -5,6 +5,7 @@ from django.db.models import Q
 from django.core.mail import send_mail
 from .models import MenuItems, Category, OrderModel 
 
+
 class IndexPage(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'customers/index.html')
