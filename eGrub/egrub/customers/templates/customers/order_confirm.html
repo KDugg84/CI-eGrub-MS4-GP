@@ -92,13 +92,13 @@
                     type: 'POST',
                     url: "{% url 'order-confirm' pk %}",
                     beforeSend: function(request) {
-                        request.setRequestHeader('X-CSRFToken', csrftoken)
+                        request.setRequestHeader('X-CSRFToken', csrftoken);
                     },
                     data: JSON.stringify({'hasPaid': true}),
                     success: function(data) {
-                        window.location.href = '/confirm-order-payment/'
+                        window.location.href = '/confirm-order-payment/';
                     }
-                })
+                });
             });
         }
     }, '#paypal-button');
