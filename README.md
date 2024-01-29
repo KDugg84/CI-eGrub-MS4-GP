@@ -291,6 +291,12 @@ Whilst coding the site I have ensured that the site is accesible for all. This i
 
 ### Bugs and Errors
 
+There is a minor issue with the footer, using the bootstrap class of 'fixed-bottom' keeps the footer stuck to the bottom of each page where its featured on the site, the fixed footer unfortunately obscures the order button at the bottom of the order form and the PayPal payment button. Removing the 'fixed-bottom' class will resolve the issue but given the lack on content on the landing page the footer will then sit almost in the middle of the page.
+
+Email comfirmations only appear in the terminal and not as an actual live email confirmation sent to a real email address.
+
+Staff cannot logout of the restaurant side of the website once an order has been placed but are prompted to login when an order has been placed to allow them to sign-off an order as dispatched.
+
 ### Validation Testing
 
 The W3C Markup Validation Service was used on all HTML pages, the use of the CSS Jigsaw Validator was omitted from this process due to the lack of external CSS, this would be attributed to the use of bootstrap in the project. The code was entered through direct input.
@@ -353,7 +359,7 @@ The performance score can fluctuate because of changes in underlying conditions.
 
 ### Payments
 
-When placing an order the following credentials are used:
+When placing an order the following sandbox credentials are used:
 
 * Email: sb-9oebo29133223@personal.example.com
 
