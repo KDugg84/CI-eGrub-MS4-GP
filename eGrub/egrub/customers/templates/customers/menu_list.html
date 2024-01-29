@@ -23,7 +23,7 @@
         <!--Loop through all menu items in the variable 'menu_items'-->
         {% for item in menu_items %}
         <div class="col-sm-12 col-md-4 mb-5 text-center">
-            <img class="rounded" src="{{ item.image.url }}" width="250" height="250">
+            <img class="rounded" src="{{ item.image.url }}" width="250" height="250" alt="menu list items">
             <h5 class="mt-5">{{ item.name}}</h5>
             <p>Price: {{ item.price }}</p>
             <p>{{ item.description }}</p>
