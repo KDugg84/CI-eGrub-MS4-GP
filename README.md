@@ -40,6 +40,7 @@ For my fourth and last project (MS4) I decided to create a fast food delivery si
     * [HTML \& CSS](#html--css)
     * [Python Testing](#python-testing)
     * [Lighthouse](#lighthouse)
+  * [Payments](#payments)  
 
 * [Deployment & Local Development](#deployment--local-development)
   * [GitHub Deployment](#deployment)
@@ -349,3 +350,21 @@ Results:
 * [Desktop](eGrub/egrub/static/img/Lighthouse-Desktop.PNG)
 
 The performance score can fluctuate because of changes in underlying conditions.
+
+### Payments
+
+When placing an order the following credentials are used:
+
+* Email: sb-9oebo29133223@personal.example.com
+
+* Password: D[8PJ1>d
+
+I did not change the password because of one-time password generation the new password is not displayed.
+
+When logging in to the restaurant side via the restaurant staff login button after payment has been processed the following superuser account credentials are used:
+
+* Name: kdugg84
+
+* Password: thisismypassword
+
+With each order table there is a button on the right handside which when clicked will display the order details again and telling a staff member whether that person has paid of not with the option to press another button to mark the order as dispatched.
