@@ -42,11 +42,12 @@ For my fourth and last project (MS4) I decided to create a fast food delivery si
     * [Lighthouse](#lighthouse)
   * [Payments](#payments)  
 
-* [Deployment & Local Development](#deployment--local-development)
+* [Deployment \& Local Development](#deployment--local-development)
   * [GitHub Deployment](#deployment)
   * [Local Development](#local-development)
     * [How to Fork](#how-to-fork)
-    * [How to Clone](#how-to-clone)    
+    * [How to Clone](#how-to-clone)
+    * [Repository Deployment to Heroku](#repository-deployment-to-heroku)    
 
 * [Credits](#credits)
   * [Code Used](#code-used)
@@ -374,3 +375,45 @@ When logging in to the restaurant side via the restaurant staff login button aft
 * Password: thisismypassword
 
 With each order table there is a button on the right handside which when clicked will display the order details again and telling a staff member whether that person has paid of not with the option to press another button to mark the order as dispatched.
+
+## Deployment & Local Development
+
+### GitHub Deployment
+
+The website/application is stored using GitHub for data and version control. To do this you follow these steps:
+
+* After each addition, change or removal of code and by utilizing the IDE's terminal commands simply type:
+
+  * git add.
+
+  * git commit -m and include a git commit message with a brief description of what this particular commit envolves.
+
+  * git push.
+
+Following the above process allows you to view the updates made to the projects repository on GitHub.  
+
+### Local Development
+
+#### How to Fork
+
+Forking is the process of creating a copy of the original repository. The process allows a developer to make any changes without affecting the main repo.
+
+To do this:
+
+* Search for the Github repo you want to copy.
+
+* Select the "Fork" button located in the top right corner which is located under your profile icon.
+
+* Once completed, you will now have your own version of that repo to make changes to.
+
+#### How to Clone
+
+To copy a Github repository:
+
+* First navigate to the repository you wish to copy.
+
+* Click on the "Code" button (which has a download icon) and copy the link provided.
+
+* In the Gitpod terminal, navigate to the directory where you want to place the clone. Then, type "git clone" and paste the link you copied earlier and press enter.
+
+* Another way to push a cloned repository to a new Gitpod workspace can be done through the use of a Gitpod extension installed in your prefered browser, in my case Google Chrome. This browser extension will add a green Gitpod button to your Github account and will be visible on every repository created, cloned or searched for.
