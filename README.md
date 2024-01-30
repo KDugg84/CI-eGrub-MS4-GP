@@ -482,3 +482,16 @@ The project was deployed to Heroku with all static and media files stored on Ama
 
       * $ git push heroku master
 
+### Automatic Deployment to Heroku
+
+* From the Heroku deploy tab, select the Deployment method 'GitHub'.
+
+* On the 'Connect to GitHub' section make sure your GitHub profile is displayed then add your repository name and click 'Search'.
+
+  * Your repo should now be displayed below, click 'Connect' to connect to this app.
+
+* Go to the Deploy tab on Heroku and under the Automatic deployment section, click 'Enable Automatic Deploys'. Then under Manual deploy click 'Deploy Branch'. 
+
+  * Heroku will now receive the code from GitHub and start building the app using the required packages.
+
+  * Once built you will receive the message 'Your app was successfully deployed' and you can click 'View' to launch your new app.
