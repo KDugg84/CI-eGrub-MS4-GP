@@ -53,6 +53,7 @@ For my fourth and last project (MS4) I decided to create a fast food delivery si
 
 * [Credits](#credits)
   * [Code Used](#code-used)
+  * [Media](media)
   * [Acknowledgments](#acknowledgments)
 
 ## Site Objectives
@@ -220,6 +221,9 @@ Whilst coding the site I have ensured that the site is accesible for all. This i
 * [Django Allauth](https://docs.allauth.org/en/latest/introduction/index.html) used for form validation and user authentication.
 * [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) used to control the rendering behaviour of Django forms in a very elegant and DRY way.
 * [Pillow](https://pypi.org/project/pillow/2.2.1/) used to add support for opening, manipulating, and saving images.
+* [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) Python SDK for AWS, used to directly create, update, and delete AWS resources from my Python scripts.
+* [psycopg2](https://pypi.org/project/psycopg2/) PostgreSQL database adapter.
+* [Gunicorn](https://gunicorn.org/) WSGI server used to take care of everything happening between the web server and web application.
 * [AWS](https://aws.amazon.com/) cloud-based storage service used to store static and, media files.
 * [Paypal](https://developer.paypal.com/docs/archive/checkout/integrate/) was used to deal with payments. 
 * [PEP8 Validator](https://pep8ci.herokuapp.com/) was used to check python code for errors
@@ -583,3 +587,27 @@ The project was deployed to Heroku with all static and media files stored on Ama
 * To connect Django to s3 add the 'USE_AWS' settings in an 'if' statement to the settings.py which will tell it which bucket it should be communicating with.
 
 * Create a file called custom_storages.py
+
+### Credits
+
+### Code Used
+
+* [Bootstrap 4.6](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
+
+* [Django Allauth](https://docs.allauth.org/en/latest/installation/quickstart.html#post-installation)
+
+* [Django CSRF](https://docs.djangoproject.com/en/3.1/ref/csrf/)
+
+* [PayPal Developer](https://developer.paypal.com/home/)
+
+### Media
+
+[Uber Eats](https://www.ubereats.com/gb/store/low-cost-fast-food/kETrDPZwSrG0LUrZ3EK9rw) Menu images and landing page hero image.
+
+### Acknowledgments
+
+* Jubril Akolade (My stand-in mentor for Chris) - for offering guidence and support for the project from it's inception, development and deployment.
+
+* Code Institute student cohort on Slack - always offering help and solutions.
+
+* Friends and family members for their feedback and support.
