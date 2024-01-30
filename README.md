@@ -47,7 +47,7 @@ For my fourth and last project (MS4) I decided to create a fast food delivery si
   * [Local Development](#local-development)
     * [How to Fork](#how-to-fork)
     * [How to Clone](#how-to-clone)
-    * [Repository Deployment to Heroku](#repository-deployment-to-heroku)    
+  * [Deployment to Heroku](#deployment-to-heroku)    
 
 * [Credits](#credits)
   * [Code Used](#code-used)
@@ -417,3 +417,5 @@ To copy a Github repository:
 * In the Gitpod terminal, navigate to the directory where you want to place the clone. Then, type "git clone" and paste the link you copied earlier and press enter.
 
 * Another way to push a cloned repository to a new Gitpod workspace can be done through the use of a Gitpod extension installed in your prefered browser, in my case Google Chrome. This browser extension will add a green Gitpod button to your Github account and will be visible on every repository created, cloned or searched for.
+
+## Deployment to Heroku
