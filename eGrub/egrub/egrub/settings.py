@@ -197,3 +197,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ACCOUNT_ADAPTER = 'restaurant.account_adapter.NoNewUsers'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# PayPal
+
+PAYPAL_PUBLIC_KEY = os.getenv('PAYPAL_PUBLIC_KEY', '')
+PAYPAL_SECRET_KEY = os.getenv('PAYPAL_SECRET_KEY', '')
