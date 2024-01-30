@@ -47,7 +47,9 @@ For my fourth and last project (MS4) I decided to create a fast food delivery si
   * [Local Development](#local-development)
     * [How to Fork](#how-to-fork)
     * [How to Clone](#how-to-clone)
-  * [Deployment to Heroku](#deployment-to-heroku)    
+  * [Deployment to Heroku](#deployment-to-heroku)
+    * [Automatic Deployment to Heroku](#automatic-deployment-to-heroku)
+    * [AWS Static \& Media Files](#aws-static--media-files)    
 
 * [Credits](#credits)
   * [Code Used](#code-used)
@@ -419,3 +421,64 @@ To copy a Github repository:
 * Another way to push a cloned repository to a new Gitpod workspace can be done through the use of a Gitpod extension installed in your prefered browser, in my case Google Chrome. This browser extension will add a green Gitpod button to your Github account and will be visible on every repository created, cloned or searched for.
 
 ## Deployment to Heroku
+
+The project was deployed to Heroku with all static and media files stored on Amazon S3. I also set up automatic deployment to ensure my Heroku app was always up to date with my GitPod repository.
+
+* Login to Heroku and from your dashboard click 'new' > 'create new app'.
+
+* Enter your 'app name' and choose the appropriate region, then click 'Create app'.
+
+* To use Postgres, install dj_database_url, and psycopg2 in the project terminal using the following commands;
+
+  * $ pip3 install dj_database_url
+
+  * $ pip3 install psycopg2
+
+* Freeze the requirements to ensure Heroku installs all the apps requirements when deployed.
+
+* To migrate to the Postgres database, go to settings.py and add the following import;
+
+  * import dj_database_url
+
+* Then down in the database's setting comment out the default configuration and replace the default database with a call to dj_database_url.parse and give it the database URL from Heroku.
+
+* Apply all migrations using the following command, after migrations have been applied amend your database configurations.
+
+  * $ python3 manage.py migrate
+
+* Create a superuser to log in with using the following command;
+
+  * $ python3 manage.py createsuperuser
+
+* Go to the Settings tab on Heroku, scroll to the 'Config Vars' section, and click 'Reveal Config Vars' and enter the variables (key and value) contained in your environment settings.
+
+* Install gunicorn using the following command;
+
+  * $ pip3 install gunicorn
+  
+  * Then freeze into your requirements file.
+
+* Create a Procfile and add the following line;
+
+  * web: gunicorn egrub.wsgi:application
+
+  * This tells Heroku to create a web dyno which will run gunicorn and serve the Django app.
+
+* Last, you need to temporarily disable collectstatic to ensure that Heroku won't try to collect static files when we deploy. This is done by adding the below variable;
+
+  * | DISABLE_COLLECTSTATIC | 1 |
+
+* Add the 'hostname' of your Heroku app to allowed hosts in settings.py as well as 'localhost' so the project can still on on you IDE.
+
+* Now you can commit all the changes and push to GitHub;
+
+  * $ git add . $ git commit -m <'your commit message'> $ git push
+
+  * If you created your app on the website you will need to initialize your Heroku git remote using the following command;
+
+    * $ heroku git:remote -a <'your app name'>
+
+    * Then use the following command to push to Heroku;
+
+      * $ git push heroku master
+
