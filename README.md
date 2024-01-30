@@ -495,3 +495,91 @@ The project was deployed to Heroku with all static and media files stored on Ama
   * Heroku will now receive the code from GitHub and start building the app using the required packages.
 
   * Once built you will receive the message 'Your app was successfully deployed' and you can click 'View' to launch your new app.
+
+### AWS Static & Media Files
+
+* Create an account by navigating to aws.amazon.com and clicking create an AWS account. Fill in your email and password, and a username for your account, and select continue.
+
+* Now on the account type page, select personal and fill out the required information, click create an account and continue.
+
+* Next you will be asked to enter a credit card number which will be used for billing if we go above the free usage limits. Beyond this, you'll be asked a couple more verification questions then once all required information is confirmed your account will be created.
+
+* Now you can navigate back to aws.amazon.com and sign-in to your account.
+
+* Navigate to AWS management console under my account and using the 'find services' search bar, find s3.
+
+* Now open s3 and create a new bucket to store all your files.
+
+  * Enter a name for your bucket (recommend naming your bucket the same as your Keroku app).
+
+  * Select a region (Select the region closest to you like you did when creating your Heroku app).
+
+  * Uncheck block all public access and acknowledge that the bucket will be public.
+
+* Now click into your new bucket and set some settings;
+
+  * On the properties tab and turn on static website hosting.
+
+  * On the permissions tab;
+
+    * Paste in a CORS Configuration to set up the required access between your Heroku app and your s3 bucket. The code is supplied by CodeInstitute.
+
+  * In the Bucket Policy tab, select policy generator;
+
+    * Policy type is 's3 bucket policy'.
+
+    * Allow all principles using a *.
+
+    * Actions is 'GetObject'.
+
+    * Add in your ARN (found on previous page).
+
+    * Click 'Add statement' then 'Generate policy'.
+
+    * Copy the policy code and paste it into the bucket policy editor (To allow access to all resources in this bucket add a slash star onto the end of the resource key).
+
+    * In the Access Control List tab, under the Public Access section, set the list objects permission to everyone.
+
+* Create a user to access the bucket created.
+
+  * Search for a new service 'IAM'.
+
+  * Now open IAM, navigate to 'groups' and click 'Create new group'.
+
+  * Create a policy by navigating to 'policies' and click 'Create policy'.
+
+  * Go JSON tab and click 'import managed policy'.
+
+    * Search for s3 and then import the s3 full access policy.
+
+    * Replace resource value '*' with your bucket ARN from the bucket policy page.
+
+    * Click 'Review policy', give it a name and a description and click 'Create policy'.
+
+* Attach the policy to the group you created.
+
+  * Navigate to 'groups', select the group you created and on permissions tab select 'Attach policy'.
+
+  * Search for the policy you created, select it and click 'Attach policy'.
+
+  * Now to create the user, navigate to 'users' and click 'Add user'
+
+    * Add username, select programmatic access and click 'Next'.
+
+    * Add user to a group by selecting the group you created and click 'Next' then click through to the end and click 'Create user'
+
+    * Now download the CSV file which will contain this users access key and secret access key.
+
+* To connect to Django, head to your project and install two new packages then freeze them into your requirements.txt;
+
+  * $ pip3 install 
+  
+  * $ pip3 install django-storages
+
+  * $ pip3 freeze > requirements.txt
+
+* In settings, add 'storages' to installed apps.
+
+* To connect Django to s3 add the 'USE_AWS' settings in an 'if' statement to the settings.py which will tell it which bucket it should be communicating with.
+
+* Create a file called custom_storages.py
